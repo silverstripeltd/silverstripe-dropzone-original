@@ -4,24 +4,30 @@
     "type": "silverstripe-vendormodule",
     "keywords": ["silverstripe", "upload", "uploader", "files", "forms", "cms"],
     "license": "BSD-3-Clause",
-    "authors": [{
-        "name": "Uncle Cheese",
-        "email": "unclecheese@leftandmain.com"
-    }],
-    "require": {
+    "authors": [
+        {
+            "name": "Uncle Cheese",
+            "email": "unclecheese@leftandmain.com"
+        }
+    ],
+    "require":
+    {
         "silverstripe/framework": "4.*"
-    },
-    "extra": {
-        "installer-name": "dropzone",
-        "expose": [
-            "javascript",
-            "css",
-            "images"
-        ]        
     },
     "autoload": {
         "psr-4": {
-            "UncleCheese\\Dropzone\\": "src/"
+            "UncleCheese\\DropZone\\": "code/"
         }
-    }    
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "installer-name": "dropzone",
+        "expose": [
+            "css",
+            "javascript",
+            "images",
+            "templates"
+        ]
+    }
 }
