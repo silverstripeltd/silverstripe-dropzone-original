@@ -69,7 +69,6 @@ class DropzoneFile extends DataExtension
 		}
 	}
 	
-	
 	/**
 	 * Gets a filename based on the extension and the size
 	 *

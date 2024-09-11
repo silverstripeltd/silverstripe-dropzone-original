@@ -4,7 +4,6 @@
         <% if $File.Orientation > -1 %>dropzone-image<% else %>dropzone-file<% end_if %>"
     style="height:{$Scope.SelectedThumbnailHeight}px;<% if $Scope.View == 'grid' %>width:{$Scope.SelectedThumbnailWidth}px;<% end_if %>"
 >
-
     <span class="file-icon" style="width:{$Scope.SelectedThumbnailWidth}px;height:{$Scope.SelectedThumbnailHeight}px;">
         <img
             <% if $Scope.SelectedThumbnailWidth > $Scope.SelectedThumbnailHeight %>
@@ -28,13 +27,13 @@
         <% if $Scope.CanDetach %>
 	        <span data-detach class="dropzone-action detach">
                 <span><%t Dropzone.DETACHFILE 'remove' %></span>
-                <img src="$resourceURL('vendor/unclecheese/dropzone/images/remove.png')" width="16">
+                <img src="$resourceURL('unclecheese/dropzone:images/remove.png')" width="16">
             </span>
         <% end_if %>
         <% if $Scope.CanDelete %>
 			<span data-delete class="dropzone-action delete">
                 <span><%t Dropzone.MARKFORDELETION 'delete' %></span>
-                <img src="$resourceURL('vendor/unclecheese/dropzone/images/trash.png')" width="16">
+                <img src="$resourceURL('unclecheese/dropzone:images/trash.png')" width="16">
             </span>
         <% end_if %>
     </span>
@@ -43,7 +42,7 @@
             <span>
                 <h5><%t Dropzone.REMOVED 'removed' %></h5>
                 <small><%t Dropzone.CHANGEAFTERSAVE 'The change will take effect after you save.' %></small>
-                <span data-delete-revert class="revert"><img src="$resourceURL('vendor/unclecheese/dropzone/images/undo.png')" width="16"></span>
+                <span data-delete-revert class="revert"><img src="$resourceURL('unclecheese/dropzone:images/undo.png')" width="16"></span>
             </span>
         </span>
     <% end_if %>
@@ -52,9 +51,8 @@
             <span>
                 <h5><%t Dropzone.DELETED 'deleted' %></h5>
                 <small><%t Dropzone.CHANGEAFTERSAVE 'The change will take effect after you save.' %></small>
-                <span data-delete-revert class="revert"><img src="$resourceURL('vendor/unclecheese/dropzone/images/undo.png')" width="16"></span>
+                <span data-delete-revert class="revert"><img src="$resourceURL('unclecheese/dropzone:images/undo.png')" width="16"></span>
             </span>
         </span>
     <% end_if %>
-
 </li>

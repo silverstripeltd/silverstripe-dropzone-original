@@ -25,8 +25,6 @@
             <% end_if %>
         </ul>
 
-
-
         <template>
             $PreviewTemplate
         </template>

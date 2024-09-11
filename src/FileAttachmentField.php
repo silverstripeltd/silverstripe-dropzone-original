@@ -218,12 +218,12 @@ class FileAttachmentField extends FileField
 	 */
 	protected function defineFieldHolderRequirements()
 	{
-		Requirements::javascript('resources/vendor/unclecheese/dropzone/javascript/dropzone.js');
-		Requirements::javascript('resources/vendor/unclecheese/dropzone/javascript/file_attachment_field.js');
+		Requirements::javascript('unclecheese/dropzone:javascript/dropzone.js');
+		Requirements::javascript('unclecheese/dropzone:javascript/file_attachment_field.js');
 		if ($this->isCMS()) {
-			Requirements::javascript('resources/vendor/unclecheese/dropzone/javascript/file_attachment_field_backend.js');
+			Requirements::javascript('unclecheese/dropzone:javascript/file_attachment_field_backend.js');
 		}
-		Requirements::css('resources/vendor/unclecheese/dropzone/css/file_attachment_field.css');
+		Requirements::css('unclecheese/dropzone:css/file_attachment_field.css');
 		
 		if (!$this->getSetting('url')) {
 			$this->settings['url'] = $this->Link('upload');
@@ -1105,7 +1105,7 @@ class FileAttachmentField extends FileField
 	 */
 	public function RootThumbnailsDir()
 	{
-		return $this->getSetting('thumbnailsDir') ?: 'resources/vendor/unclecheese/dropzone/images/file-icons';
+		return $this->getSetting('thumbnailsDir') ?: '_resources/vendor/unclecheese/dropzone/images/file-icons';
 	}
 	
 	/**
