@@ -2,7 +2,6 @@
 
 namespace UncleCheese\DropZone;
 
-
 use Embed\Adapters\File;
 use SilverStripe\Assets\Folder;
 use SilverStripe\Control\HTTPRequest;
@@ -26,10 +25,11 @@ class FileAttachmentField_SelectHandler {
 	);
 	
 	/**
-	 * @param $folderID The ID of the folder to display.
+	 * @param $folderID - the ID of the folder to display.
 	 * @return FormField
 	 */
-	protected function getListField($folderID) {
+	protected function getListField($folderID)
+	{
 		// Generate the folder selection field.
 		$folderField = new TreeDropdownField('ParentID', _t('HtmlEditorField.FOLDER', Folder::class), Folder::class);
 		$folderField->setValue($folderID);
@@ -66,7 +66,8 @@ class FileAttachmentField_SelectHandler {
 		return $selectComposite;
 	}
 	
-	public function filesbyid(HTTPRequest $r) {
+	public function filesbyid(HTTPRequest $r)
+	{
 		$ids = $r->getVar('ids');
 		$files = File::get()->byIDs(explode(',',$ids));
 		
