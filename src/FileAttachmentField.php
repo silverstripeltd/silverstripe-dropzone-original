@@ -157,8 +157,8 @@ class FileAttachmentField extends FileField
 	public static function get_filesize_from_ini()
 	{
 		$bytes = min([
-			File::ini2bytes(ini_get('post_max_size') ?: '8M'),
-			File::ini2bytes(ini_get('upload_max_filesize') ?: '2M')
+			Convert::memstring2bytes(('post_max_size') ?: '8M'),
+			Convert::memstring2bytes(('upload_max_filesize') ?: '2M')
 		]);
 		
 		return floor($bytes / (1024 * 1024));
@@ -997,7 +997,7 @@ class FileAttachmentField extends FileField
 			return $this->httpError(403);
 		}
 		
-		return FileAttachmentField_SelectHandler::create($this, $this->getFolderName());
+		return FileAttachmentFieldSelectHandler::create($this, $this->getFolderName());
 	}
 	
 	/**
@@ -1363,7 +1363,7 @@ class FileAttachmentField extends FileField
 			throw new \Exception("FileAttachmentField::getDefaults() - There is no config json file at $file_path");
 		}
 		
-		return Convert::json2array(file_get_contents($file_path));
+		return json_decode(file_get_contents($file_path), true);
 	}
 	
 	/**
@@ -1436,6 +1436,6 @@ class FileAttachmentField extends FileField
 			}
 		}
 		
-		return Convert::array2json($data);
+		return json_encode($data);
 	}
 }

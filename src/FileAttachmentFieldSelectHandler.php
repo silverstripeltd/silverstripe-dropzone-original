@@ -18,7 +18,7 @@ use SilverStripe\ORM\DataList;
 use SilverStripe\View\ArrayData;
 use SilverStripe\View\SSViewer;
 
-class FileAttachmentField_SelectHandler {
+class FileAttachmentFieldSelectHandler {
 	
 	private static $allowed_actions = array (
 		'filesbyid',
