@@ -585,8 +585,10 @@ require.register("dropzone/lib/dropzone.js", function (exports, module) {
       Dropzone.instances.push(this);
       this.element.dropzone = this;
       elementOptions = (_ref = Dropzone.optionsForElement(this.element)) != null ? _ref : {};
-      this.options = extend({}, elementOptions, this.defaultOptions, options != null ? options : {});
-      this.option.maxFilesize = 256;
+      this.options = extend({}, this.defaultOptions, elementOptions, options != null ? options : {});
+      if (this.options.maxFilesize === 0) {
+        this.options.maxFilesize = 256;
+      }
       if (this.options.forceFallback || !Dropzone.isBrowserSupported()) {
         return this.options.fallback.call(this);
       }
