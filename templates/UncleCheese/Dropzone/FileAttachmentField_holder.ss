@@ -27,8 +27,6 @@
                 <% end_if %>
             </ul>
 
-
-
             <template>
                 $PreviewTemplate
             </template>
@@ -44,7 +42,6 @@
             <% if not $AutoProcess %>
                 <button class="process" data-auto-process><%t Dropzone.UPLOADFILES "Upload file(s)" %></button>
             <% end_if %>
-
         </div>
 
         <div class="unsupported">
